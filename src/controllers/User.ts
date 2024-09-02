@@ -8,7 +8,7 @@ export const createUser = async (req : Request , res : Response) => {
 
     try {
 
-        if(!email || !firstName || !lastName || !organisation || profilePic || currentLocation) {
+        if(!email || !firstName || !lastName || !organisation ) {
             return res.status(411).json({
                 msg : "Please fill in all the details !"
             })
