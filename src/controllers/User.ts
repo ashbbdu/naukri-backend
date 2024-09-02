@@ -55,11 +55,3 @@ export const createUser = async (req : Request , res : Response) => {
     }
 
 }
-
-
-export const sum = (req : Request, res : Response) => {
-    const {a , b} = req.body;
-    return res.status(200).json({
-        answer : a + b
-    })
-}
