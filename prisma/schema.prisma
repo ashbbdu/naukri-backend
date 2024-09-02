@@ -19,16 +19,38 @@ enum UserType {
 }
 
 model User {
-  id              Int      @id @default(autoincrement())
-  email           String   @unique
+  id              Int           @id @default(autoincrement())
+  email           String        @unique
   firstName       String
   lastName        String
   usertype        UserType
   organisation    String
   profilePic      String?
   currentLocation String?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  application     Application[]
+  job             Job[]
+}
+
+model Job {
+  id          Int           @id @default(autoincrement())
+  title       String
+  description String
+  salary      Int
+  application Application[]
+  userId      Int
+  user        User          @relation(fields: [userId], references: [id])
+}
+
+model Application {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  jobId     Int
+  job       Job      @relation(fields: [jobId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+  appliedAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Otp {
