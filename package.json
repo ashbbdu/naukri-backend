@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui --coverage",
     "start": "node dist/bin/bin.js"
   },
   "keywords": [],
@@ -13,7 +15,10 @@
   "dependencies": {
     "@prisma/client": "^5.19.0",
     "@types/supertest": "^6.0.2",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "nodemailer": "^6.9.14",
+    "otp-generator": "^4.0.1",
     "prisma": "^5.19.0",
     "supertest": "^7.0.0",
     "vitest-mock-extended": "^2.0.2",
@@ -21,6 +26,10 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
+    "@types/nodemailer": "^6.4.15",
+    "@types/otp-generator": "^4.0.2",
+    "@vitest/coverage-v8": "^2.0.5",
+    "@vitest/ui": "^2.0.5",
     "vitest": "^2.0.5"
   }
 }

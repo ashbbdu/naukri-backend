@@ -19,13 +19,19 @@ enum UserType {
 }
 
 model User {
-  id           Int     @id @default(autoincrement())
-  email        String  @unique
-  firstName    String
-  lastName     String
-  organisation String
-  profilePic   String?
+  id              Int      @id @default(autoincrement())
+  email           String   @unique
+  firstName       String
+  lastName        String
+  organisation    String
+  profilePic      String?
   currentLocation String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+}
+
+model Otp {
+  id    Int    @id @default(autoincrement())
+  email String
+  otp   Int
 }

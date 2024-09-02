@@ -1,8 +1,9 @@
 import express from "express";
-import { createUser } from "../controllers/User";
+import { sendOtp, signup } from "../controllers/Auth";
 
 const router = express.Router();
 
-router.post("/createuser" , createUser);
+router.post("/sendotp" , sendOtp)
+router.post("/createuser" , signup);
 
 export default router;

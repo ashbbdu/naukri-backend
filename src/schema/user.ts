@@ -7,3 +7,7 @@ export const createUserSchema = z.object({
     profilePic: z.string().optional(),
     currentLocation: z.string().optional()
 })
+
+// export const loginSchema = z.object({
+//     email : 
+// })
