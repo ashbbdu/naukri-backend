@@ -16,6 +16,7 @@ export const createUser = async (req : Request , res : Response) => {
         const existinguser = await prismaClient.user.findUnique({
             where : {
                 email : req.body.email
+                // test
             }
         })
         if(existinguser) {
