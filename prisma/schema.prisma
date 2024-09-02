@@ -23,6 +23,7 @@ model User {
   email           String   @unique
   firstName       String
   lastName        String
+  usertype        UserType
   organisation    String
   profilePic      String?
   currentLocation String?
