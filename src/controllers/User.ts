@@ -51,7 +51,9 @@ export const createUser = async (req : Request , res : Response) => {
 
     } catch (e) {
         console.log(e);
-        
+        return res.status(411).json({
+            msg : "Something went wrong !"
+        })
     }
 
 }
